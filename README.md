@@ -4,7 +4,13 @@ BLM4581 Ağ Tabanlı Teknolojiler ve Uygulamaları dersi (2026–2027 Güz) dön
 
 Müşterilerin şubelerdeki araçları inceleyip tarih aralığı seçerek rezervasyon yapabildiği, yöneticinin araç, şube, kategori, rezervasyon ve bakım kayıtlarını yönettiği bir web uygulaması.
 
-**Geliştirici:** Samed Candemir (24290772)
+## Ekip
+
+| Ad Soyad | Lider olduğu haftalar |
+|---|---|
+| Samed Candemir | 1–3 |
+| Muhammed Mete | 4–6 |
+| Ahmet Taha Erol | 7–9 |
 
 ## Kullanılan teknolojiler
 
@@ -59,6 +65,22 @@ dotnet run
 ```
 
 Terminalde yazan adresi (ör. `https://localhost:7xxx`) tarayıcıda açın.
+
+## Ekip çalışma düzeni
+
+`main` dalına doğrudan push yapılmaz. Her iş ayrı bir dalda yapılır ve pull request ile birleştirilir:
+
+```powershell
+git checkout main
+git pull
+git checkout -b ozellik/kategori-yonetimi   # işe uygun bir dal adı
+# ... değişiklikler ...
+git add .
+git commit -m "Kategori listeleme sayfası eklendi"
+git push -u origin ozellik/kategori-yonetimi
+```
+
+Ardından GitHub'da **Compare & pull request** ile PR açılır; başka bir üye kontrol edip birleştirir. Migration ekleyecek kişi önce güncel `main`'i çekmelidir; aynı anda iki kişi migration eklememelidir.
 
 ## Proje yapısı
 
