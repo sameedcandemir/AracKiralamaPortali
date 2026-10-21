@@ -12,6 +12,14 @@ Müşterilerin şubelerdeki araçları inceleyip tarih aralığı seçerek rezer
 | Muhammed Mete | 4–6 |
 | Ahmet Taha Erol | 7–9 |
 
+Haftalık videolar: [Google Drive klasörü](https://drive.google.com/drive/folders/14getoNzJrZwLKVoA4S7gkM4P9as_9mSX)
+
+## Haftalık ilerleme
+
+| Hafta | Lider | Yapılanlar |
+|---|---|---|
+| 1 | Samed Candemir | GitHub deposu ve README; ASP.NET Core MVC projesi; PostgreSQL + EF Core (Npgsql) bağlantısı, bağlantı dizesi user-secrets ile; Google Drive klasörü |
+
 ## Kullanılan teknolojiler
 
 - ASP.NET Core MVC (.NET 10)
