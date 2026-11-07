@@ -2,34 +2,98 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center py-4">
-    <h1 class="display-5">Araç Kiralama Portalı</h1>
-    <p class="lead">Şubelerimizdeki araçları inceleyin, tarih seçin ve hemen rezervasyon yapın.</p>
-</div>
+@section Hero {
+    <section class="hero">
+        <div class="container hero-icerik">
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="ust-baslik mb-3">Çevrim İçi Araç Kiralama</div>
+                    <h1 class="hero-baslik mb-4">Yolculuğunuz,<br />standartlarınız kadar seçkin.</h1>
+                    <p class="hero-metin mb-4">Şubelerimizdeki araçları inceleyin, tarih aralığını seçin ve rezervasyonunuzu birkaç adımda oluşturun.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#hizmetler" class="btn btn-vurgu">Hizmetlerimiz</a>
+                        <a href="#nasil-calisir" class="btn btn-outline-light rounded-0 px-4">Nasıl Çalışır?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-alt">
+            <div class="container">
+                <div class="row text-center text-md-start">
+                    <div class="col-12 col-md-4 py-3"><i class="bi bi-arrow-left-right me-2 text-vurgu"></i>Şubeden şubeye iade</div>
+                    <div class="col-12 col-md-4 py-3"><i class="bi bi-calendar2-check me-2 text-vurgu"></i>Çevrim içi rezervasyon</div>
+                    <div class="col-12 col-md-4 py-3"><i class="bi bi-receipt me-2 text-vurgu"></i>Toplam ücret önceden belli</div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
 
-<div class="row g-3">
-    <div class="col-12 col-md-4">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Geniş araç seçeneği</h5>
-                <p class="card-text">Ekonomi, SUV ve lüks kategorilerinde araçlar.</p>
+<section id="hizmetler" class="bolum">
+    <div class="row align-items-end mb-5 g-3">
+        <div class="col-12 col-lg-7">
+            <div class="ust-baslik mb-2">Hizmetlerimiz</div>
+            <h2 class="bolum-baslik mb-0">Kiralama sürecinin tamamı tek bir yerde.</h2>
+        </div>
+        <div class="col-12 col-lg-5">
+            <p class="text-secondary mb-0">Araç seçiminden iadeye kadar her adımı çevrim içi takip edin.</p>
+        </div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-12 col-lg-7">
+            <div class="kutu kutu-filo">
+                <div class="kutu-icerik">
+                    <div class="hizmet-no">01</div>
+                    <h3 class="kutu-baslik">Geniş araç filosu</h3>
+                    <p class="kutu-metin">İhtiyacınıza ve bütçenize uygun aracı farklı kategoriler arasından seçin.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="etiket">Ekonomi</span>
+                        <span class="etiket">SUV</span>
+                        <span class="etiket">Lüks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5 d-flex flex-column gap-3">
+            <div class="kutu kutu-acik flex-fill">
+                <i class="bi bi-geo-alt kutu-ikon"></i>
+                <div class="kutu-icerik">
+                    <div class="hizmet-no">02</div>
+                    <h3 class="kutu-baslik">Şube ağı</h3>
+                    <p class="kutu-metin">Aracı bir şubeden teslim alıp farklı bir şubeye iade edebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="kutu kutu-vurgu flex-fill">
+                <i class="bi bi-receipt kutu-ikon"></i>
+                <div class="kutu-icerik">
+                    <div class="hizmet-no">03</div>
+                    <h3 class="kutu-baslik">Şeffaf fiyatlandırma</h3>
+                    <p class="kutu-metin">Seçtiğiniz tarihlere göre toplam ücret rezervasyondan önce hesaplanır.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-4">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Farklı şubeler</h5>
-                <p class="card-text">Aracı bir şubeden alıp başka bir şubeye iade edebilirsiniz.</p>
-            </div>
+</section>
+
+<section id="nasil-calisir" class="bolum bolum-koyu">
+    <div class="ust-baslik mb-2">Nasıl Çalışır?</div>
+    <h2 class="bolum-baslik text-white mb-5">Üç adımda yola çıkın.</h2>
+    <div class="row g-0 adimlar">
+        <div class="col-12 col-md-4 adim">
+            <div class="adim-no">1</div>
+            <h3 class="hizmet-baslik text-white">Aracınızı seçin</h3>
+            <p class="text-white-50 mb-0">Kategori, şube ve fiyata göre araçları filtreleyin.</p>
+        </div>
+        <div class="col-12 col-md-4 adim">
+            <div class="adim-no">2</div>
+            <h3 class="hizmet-baslik text-white">Tarihleri belirleyin</h3>
+            <p class="text-white-50 mb-0">Alış ve iade tarihlerini ve şubelerini seçin.</p>
+        </div>
+        <div class="col-12 col-md-4 adim">
+            <div class="adim-no">3</div>
+            <h3 class="hizmet-baslik text-white">Rezervasyon yapın</h3>
+            <p class="text-white-50 mb-0">Rezervasyonunuz onaylandığında aracınız sizi bekler.</p>
         </div>
     </div>
-    <div class="col-12 col-md-4">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Kolay rezervasyon</h5>
-                <p class="card-text">Müsait araçları görün, ücreti önceden öğrenin.</p>
-            </div>
-        </div>
-    </div>
-</div>
+</section>

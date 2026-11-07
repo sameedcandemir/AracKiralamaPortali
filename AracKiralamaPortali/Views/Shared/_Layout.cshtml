@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Araç Kiralama Portalı</title>
     <script type="importmap"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AracKiralamaPortali.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Araç Kiralama</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+<body class="d-flex flex-column min-vh-100">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark site-navbar">
+            <div class="container">
+                <a class="navbar-brand marka" asp-area="" asp-controller="Home" asp-action="Index">
+                    ARAÇ<span class="text-vurgu">KİRALAMA</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#anaMenu" aria-controls="anaMenu"
                         aria-expanded="false" aria-label="Menüyü aç/kapat">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="anaMenu">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
@@ -31,15 +37,40 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    @await RenderSectionAsync("Hero", required: false)
+
+    <div class="container flex-grow-1">
+        <main role="main" class="py-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Araç Kiralama Portalı - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
+    <footer class="site-footer mt-auto">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="marka mb-2">ARAÇ<span class="text-vurgu">KİRALAMA</span></div>
+                    <p class="text-white-50 small mb-0">Şubelerimizdeki araçları çevrim içi inceleyin ve rezervasyonunuzu oluşturun.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="footer-baslik">Sayfalar</div>
+                    <ul class="list-unstyled small mb-0">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="footer-baslik">Proje</div>
+                    <ul class="list-unstyled small text-white-50 mb-0">
+                        <li>BLM4581 Dönem Projesi</li>
+                        <li>Araç Kiralama Ekibi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-alt">
+            <div class="container py-3 small text-white-50">&copy; 2026 Araç Kiralama Portalı</div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

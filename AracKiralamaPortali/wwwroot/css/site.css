@@ -12,15 +12,6 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
@@ -28,4 +19,316 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+/* ---- Site teması ---- */
+:root {
+  --ak-siyah: #0b0b0c;
+  --ak-koyu: #141416;
+  --ak-vurgu: #c9a24d;
+  --ak-vurgu-acik: #dcb966;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-vurgu {
+  color: var(--ak-vurgu) !important;
+}
+
+/* Düğmeler: keskin köşeli, büyük harfli */
+.btn {
+  border-radius: 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.85rem 1.75rem;
+}
+
+.btn-vurgu {
+  background-color: var(--ak-vurgu);
+  color: var(--ak-siyah);
+  border: 1px solid var(--ak-vurgu);
+}
+
+.btn-vurgu:hover {
+  background-color: var(--ak-vurgu-acik);
+  border-color: var(--ak-vurgu-acik);
+  color: var(--ak-siyah);
+}
+
+/* Menü */
+.site-navbar {
+  background-color: var(--ak-siyah);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+}
+
+.marka {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.site-navbar .nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-navbar .nav-link:hover {
+  color: #fff;
+}
+
+/* Küçük üst başlık (ör. HİZMETLERİMİZ) */
+.ust-baslik {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ak-vurgu);
+}
+
+/* Ana sayfa karşılama alanı: fotoğraf + soldan koyulaşan katman */
+.hero {
+  position: relative;
+  color: #fff;
+  background-color: var(--ak-siyah);
+  background-image:
+    linear-gradient(90deg, rgba(11, 11, 12, 0.95) 0%, rgba(11, 11, 12, 0.7) 45%, rgba(11, 11, 12, 0.2) 100%),
+    url("/img/hero-arac.jpg");
+  background-size: cover;
+  background-position: center right;
+}
+
+.hero-icerik {
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 992px) {
+  .hero-icerik {
+    padding-top: 9rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.hero-baslik {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero-metin {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 34rem;
+}
+
+.hero-alt {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(11, 11, 12, 0.6);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Bölümler */
+.bolum {
+  padding: 4rem 0;
+}
+
+.bolum-baslik {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 36rem;
+}
+
+/* Koyu bölüm: arka plan container dışına, ekranın iki kenarına kadar uzar */
+.bolum-koyu {
+  background-color: var(--ak-koyu);
+  box-shadow: 0 0 0 100vmax var(--ak-koyu);
+  clip-path: inset(0 -100vmax);
+  margin-top: 2rem;
+}
+
+/* Sayfanın son bölümü koyuysa alt bilgiyle arasında beyaz boşluk kalmasın */
+.bolum-koyu:last-child {
+  margin-bottom: -1.5rem;
+}
+
+/* Hizmetler: farklı boyutlu kutulardan oluşan ızgara */
+.kutu {
+  position: relative;
+  overflow: hidden;
+  min-height: 15rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.kutu-icerik {
+  position: relative;
+  padding: 2rem;
+}
+
+.kutu-baslik {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.kutu-metin {
+  max-width: 26rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Büyük kutu: fotoğraf + aşağıdan koyulaşan katman */
+.kutu-filo {
+  min-height: 26rem;
+  height: 100%;
+  color: #fff;
+  background-color: var(--ak-siyah);
+}
+
+.kutu-filo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(0deg, rgba(11, 11, 12, 1) 22%, rgba(11, 11, 12, 0) 60%),
+    url("/img/filo-suv.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  transition: transform 0.6s ease;
+}
+
+.kutu-filo:hover::before {
+  transform: scale(1.05);
+}
+
+.kutu-filo .kutu-metin {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.etiket {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Açık gri kutu */
+.kutu-acik {
+  background-color: #f2f2f3;
+}
+
+.kutu-acik .kutu-metin {
+  color: #5c5c66;
+  margin-bottom: 0;
+}
+
+/* Altın kutu */
+.kutu-vurgu {
+  background-color: var(--ak-vurgu);
+  color: var(--ak-siyah);
+}
+
+.kutu-vurgu .hizmet-no {
+  color: var(--ak-siyah);
+}
+
+.kutu-vurgu .kutu-metin {
+  color: rgba(11, 11, 12, 0.75);
+  margin-bottom: 0;
+}
+
+/* Kutunun sağ üst köşesindeki büyük, silik ikon */
+.kutu-ikon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-size: 4.5rem;
+  line-height: 1;
+  opacity: 0.18;
+}
+
+.hizmet-no {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--ak-vurgu);
+  margin-bottom: 1rem;
+}
+
+.hizmet-baslik {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Adımlar: aralarında ince dikey çizgi */
+.adim {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (min-width: 768px) {
+  .adim {
+    padding: 2rem 1.5rem;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .adim:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.adim-no {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ak-vurgu);
+  margin-bottom: 1rem;
+}
+
+/* Alt bilgi */
+.site-footer {
+  background-color: var(--ak-siyah);
+  color: #fff;
+}
+
+.footer-baslik {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.footer-alt {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
