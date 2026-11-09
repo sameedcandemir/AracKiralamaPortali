@@ -14,4 +14,6 @@ public class Kategori
     [StringLength(250, ErrorMessage = "Açıklama en fazla 250 karakter olabilir.")]
     [Display(Name = "Açıklama")]
     public string Aciklama { get; set; } = "";
+
+    public List<Arac> Araclar { get; set; } = new();
 }
