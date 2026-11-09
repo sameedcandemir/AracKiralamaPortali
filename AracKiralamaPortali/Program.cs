@@ -24,9 +24,12 @@ builder.Services.AddIdentity<Kullanici, IdentityRole>(options =>
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Hesap/Giris";
+    options.AccessDeniedPath = "/Hesap/ErisimEngellendi";
 });
 
 var app = builder.Build();
+
+await AdminOlusturucu.OlusturAsync(app.Services);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
