@@ -23,6 +23,7 @@ public class Rezervasyon
     public int Id { get; set; }
 
     public string KullaniciId { get; set; } = "";
+    public Kullanici? Kullanici { get; set; }
 
     [Required(ErrorMessage = "Araç seçimi zorunludur.")]
     [Display(Name = "Araç")]
