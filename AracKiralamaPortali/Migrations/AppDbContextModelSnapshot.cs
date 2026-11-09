@@ -85,6 +85,78 @@ namespace AracKiralamaPortali.Migrations
                     b.HasIndex("SubeId");
 
                     b.ToTable("Araclar");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Durum = 0,
+                            GunlukUcret = 1200m,
+                            KategoriId = 1,
+                            Marka = "Renault",
+                            Model = "Clio",
+                            Plaka = "34 ABC 101",
+                            SubeId = 1,
+                            Vites = "Manuel",
+                            YakitTuru = "Benzin",
+                            Yil = 2023
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Durum = 0,
+                            GunlukUcret = 1100m,
+                            KategoriId = 1,
+                            Marka = "Fiat",
+                            Model = "Egea",
+                            Plaka = "06 DEF 202",
+                            SubeId = 2,
+                            Vites = "Manuel",
+                            YakitTuru = "Dizel",
+                            Yil = 2022
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Durum = 0,
+                            GunlukUcret = 1800m,
+                            KategoriId = 2,
+                            Marka = "Dacia",
+                            Model = "Duster",
+                            Plaka = "35 GHI 303",
+                            SubeId = 3,
+                            Vites = "Otomatik",
+                            YakitTuru = "Dizel",
+                            Yil = 2023
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Durum = 0,
+                            GunlukUcret = 2500m,
+                            KategoriId = 2,
+                            Marka = "Hyundai",
+                            Model = "Tucson",
+                            Plaka = "34 JKL 404",
+                            SubeId = 1,
+                            Vites = "Otomatik",
+                            YakitTuru = "Hibrit",
+                            Yil = 2024
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Durum = 2,
+                            GunlukUcret = 5000m,
+                            KategoriId = 3,
+                            Marka = "BMW",
+                            Model = "520i",
+                            Plaka = "06 MNO 505",
+                            SubeId = 2,
+                            Vites = "Otomatik",
+                            YakitTuru = "Benzin",
+                            Yil = 2024
+                        });
                 });
 
             modelBuilder.Entity("AracKiralamaPortali.Models.BakimKaydi", b =>
@@ -119,6 +191,26 @@ namespace AracKiralamaPortali.Migrations
                     b.HasIndex("AracId");
 
                     b.ToTable("BakimKayitlari");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Aciklama = "Yağ ve filtre değişimi",
+                            AracId = 1,
+                            BakimTuru = "Periyodik Bakım",
+                            Maliyet = 3500m,
+                            Tarih = new DateOnly(2026, 9, 15)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Aciklama = "Dört lastik kışlık lastikle değiştirildi",
+                            AracId = 5,
+                            BakimTuru = "Lastik Değişimi",
+                            Maliyet = 18000m,
+                            Tarih = new DateOnly(2026, 11, 2)
+                        });
                 });
 
             modelBuilder.Entity("AracKiralamaPortali.Models.Kategori", b =>
@@ -142,6 +234,26 @@ namespace AracKiralamaPortali.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Kategoriler");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Aciklama = "Düşük yakıt tüketimli, şehir içi kullanıma uygun araçlar",
+                            Ad = "Ekonomi"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Aciklama = "Geniş iç hacimli, uzun yol ve aile kullanımına uygun araçlar",
+                            Ad = "SUV"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Aciklama = "Üst segment konfor ve donanıma sahip araçlar",
+                            Ad = "Lüks"
+                        });
                 });
 
             modelBuilder.Entity("AracKiralamaPortali.Models.Kullanici", b =>
@@ -299,6 +411,32 @@ namespace AracKiralamaPortali.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subeler");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ad = "Kadıköy Şubesi",
+                            Adres = "Caferağa Mah. Moda Cad. No: 10 Kadıköy",
+                            Sehir = "İstanbul",
+                            Telefon = "02160000001"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ad = "Çankaya Şubesi",
+                            Adres = "Kızılay Mah. Atatürk Bulvarı No: 20 Çankaya",
+                            Sehir = "Ankara",
+                            Telefon = "03120000002"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ad = "Konak Şubesi",
+                            Adres = "Alsancak Mah. Kıbrıs Şehitleri Cad. No: 30 Konak",
+                            Sehir = "İzmir",
+                            Telefon = "02320000003"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
