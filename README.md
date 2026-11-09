@@ -18,7 +18,9 @@ Haftalık videolar: [Google Drive klasörü](https://drive.google.com/drive/fold
 
 | Hafta | Lider | Yapılanlar |
 |---|---|---|
-| 1 | Samed Candemir | GitHub deposu ve README; ASP.NET Core MVC projesi; PostgreSQL + EF Core (Npgsql) bağlantısı, bağlantı dizesi user-secrets ile; Google Drive klasörü |
+| 1 | Samed Candemir | **Samed:** GitHub deposu ve README; ASP.NET Core MVC projesi; PostgreSQL + EF Core (Npgsql) bağlantısı, bağlantı dizesi user-secrets ile; Google Drive klasörü. **Muhammed Mete:** Bootstrap ile mobil uyumlu sayfa düzeni. **Ahmet Taha:** README kurulum adımlarının temiz klonda test edilmesi |
+| 2 | Samed Candemir | **Samed:** Arac ve Rezervasyon varlıkları, ilişkiler (iki şube ilişkisi `Restrict`), ilk migration. **Muhammed Mete:** Kategori ve Sube varlıkları. **Ahmet Taha:** BakimKaydi varlığı ve seed verileri |
+| 3 | Samed Candemir | **Samed:** ASP.NET Core Identity, `Kullanici` sınıfı, Admin ve Musteri rolleri. **Muhammed Mete:** Kayıt, giriş ve çıkış sayfaları. **Ahmet Taha:** Rol bazlı yetkilendirme, başlangıç admin hesabı |
 
 ## Kullanılan teknolojiler
 
