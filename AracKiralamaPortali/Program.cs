@@ -18,7 +18,13 @@ builder.Services.AddIdentity<Kullanici, IdentityRole>(options =>
         options.User.RequireUniqueEmail = true;
     })
     .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders()
+    .AddErrorDescriber<TurkceIdentityHatalari>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Hesap/Giris";
+});
 
 var app = builder.Build();
 
