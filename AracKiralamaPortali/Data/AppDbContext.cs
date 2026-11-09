@@ -11,6 +11,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
     public DbSet<Sube> Subeler { get; set; } = default!;
     public DbSet<Arac> Araclar { get; set; } = default!;
     public DbSet<Rezervasyon> Rezervasyonlar { get; set; } = default!;
+    public DbSet<BakimKaydi> BakimKayitlari { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -46,6 +47,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
             .HasOne(a => a.Sube)
             .WithMany(s => s.Araclar)
             .HasForeignKey(a => a.SubeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<BakimKaydi>()
+            .HasOne(b => b.Arac)
+            .WithMany(a => a.BakimKayitlari)
+            .HasForeignKey(b => b.AracId)
             .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Rezervasyon>()

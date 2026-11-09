@@ -87,6 +87,40 @@ namespace AracKiralamaPortali.Migrations
                     b.ToTable("Araclar");
                 });
 
+            modelBuilder.Entity("AracKiralamaPortali.Models.BakimKaydi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Aciklama")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<int>("AracId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("BakimTuru")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<decimal>("Maliyet")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("numeric(10,2)");
+
+                    b.Property<DateOnly>("Tarih")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AracId");
+
+                    b.ToTable("BakimKayitlari");
+                });
+
             modelBuilder.Entity("AracKiralamaPortali.Models.Kategori", b =>
                 {
                     b.Property<int>("Id")
@@ -434,6 +468,17 @@ namespace AracKiralamaPortali.Migrations
                     b.Navigation("Sube");
                 });
 
+            modelBuilder.Entity("AracKiralamaPortali.Models.BakimKaydi", b =>
+                {
+                    b.HasOne("AracKiralamaPortali.Models.Arac", "Arac")
+                        .WithMany("BakimKayitlari")
+                        .HasForeignKey("AracId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Arac");
+                });
+
             modelBuilder.Entity("AracKiralamaPortali.Models.Rezervasyon", b =>
                 {
                     b.HasOne("AracKiralamaPortali.Models.Sube", "AlisSube")
@@ -522,6 +567,8 @@ namespace AracKiralamaPortali.Migrations
 
             modelBuilder.Entity("AracKiralamaPortali.Models.Arac", b =>
                 {
+                    b.Navigation("BakimKayitlari");
+
                     b.Navigation("Rezervasyonlar");
                 });
 
