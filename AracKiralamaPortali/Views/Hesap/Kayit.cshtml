@@ -1,0 +1,79 @@
+@model KayitViewModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="row g-0 hesap-panel">
+    <div class="col-lg-5 d-none d-lg-flex hesap-gorsel">
+        <div>
+            <div class="ust-baslik mb-3">Yeni Hesap</div>
+            <p class="hesap-gorsel-baslik mb-0">Birkaç adımda rezervasyona hazır olun.</p>
+        </div>
+    </div>
+    <div class="col-12 col-lg-7 hesap-form">
+        <h1 class="hesap-baslik">Kayıt Ol</h1>
+        <p class="hesap-aciklama">Rezervasyon yapmak için bilgilerinizi girin.</p>
+
+        <form asp-action="Kayit" method="post">
+            <div asp-validation-summary="ModelOnly" class="hesap-hata" role="alert"></div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 mb-3">
+                    <label asp-for="Ad" class="form-label"></label>
+                    <input asp-for="Ad" class="form-control" autocomplete="given-name" />
+                    <span asp-validation-for="Ad" class="text-danger small"></span>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                    <label asp-for="Soyad" class="form-label"></label>
+                    <input asp-for="Soyad" class="form-control" autocomplete="family-name" />
+                    <span asp-validation-for="Soyad" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="username" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 mb-3">
+                    <label asp-for="Telefon" class="form-label"></label>
+                    <input asp-for="Telefon" class="form-control" autocomplete="tel" />
+                    <span asp-validation-for="Telefon" class="text-danger small"></span>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                    <label asp-for="EhliyetTarihi" class="form-label"></label>
+                    <input asp-for="EhliyetTarihi" class="form-control" />
+                    <span asp-validation-for="EhliyetTarihi" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Sifre" class="form-label"></label>
+                <div class="input-group">
+                    <input asp-for="Sifre" class="form-control" autocomplete="new-password" aria-describedby="sifreYardim" />
+                    <button type="button" class="btn btn-outline-secondary sifre-goster" aria-label="Şifreyi göster" aria-pressed="false">
+                        <i class="bi bi-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div id="sifreYardim" class="form-text">En az 6 karakter; büyük harf, küçük harf, rakam ve özel karakter içermelidir.</div>
+                <span asp-validation-for="Sifre" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="SifreTekrar" class="form-label"></label>
+                <input asp-for="SifreTekrar" class="form-control" autocomplete="new-password" />
+                <span asp-validation-for="SifreTekrar" class="text-danger small"></span>
+            </div>
+
+            <button type="submit" class="btn btn-vurgu w-100">Hesap Oluştur</button>
+        </form>
+
+        <p class="hesap-alt">Zaten hesabınız var mı? <a asp-action="Giris">Giriş yapın</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

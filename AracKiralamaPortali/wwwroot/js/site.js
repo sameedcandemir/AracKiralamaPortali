@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Şifre alanlarındaki göster/gizle düğmesi
+document.querySelectorAll(".sifre-goster").forEach(function (dugme) {
+    dugme.addEventListener("click", function () {
+        const alan = dugme.parentElement.querySelector("input");
+        const ikon = dugme.querySelector("i");
+        const gizliydi = alan.type === "password";
 
-// Write your JavaScript code.
+        alan.type = gizliydi ? "text" : "password";
+        ikon.className = gizliydi ? "bi bi-eye-slash" : "bi bi-eye";
+        dugme.setAttribute("aria-label", gizliydi ? "Şifreyi gizle" : "Şifreyi göster");
+        dugme.setAttribute("aria-pressed", gizliydi ? "true" : "false");
+    });
+});
