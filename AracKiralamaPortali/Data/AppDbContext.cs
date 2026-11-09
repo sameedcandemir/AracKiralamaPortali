@@ -1,9 +1,10 @@
 using AracKiralamaPortali.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AracKiralamaPortali.Data;
 
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<Kullanici>(options)
 {
     public DbSet<Kategori> Kategoriler { get; set; } = default!;
     public DbSet<Sube> Subeler { get; set; } = default!;
@@ -28,6 +29,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .HasOne(a => a.Sube)
             .WithMany(s => s.Araclar)
             .HasForeignKey(a => a.SubeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Rezervasyon>()
+            .HasOne(r => r.Kullanici)
+            .WithMany(k => k.Rezervasyonlar)
+            .HasForeignKey(r => r.KullaniciId)
             .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Rezervasyon>()
