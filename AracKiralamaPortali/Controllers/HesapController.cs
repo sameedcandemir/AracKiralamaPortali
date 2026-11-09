@@ -108,6 +108,12 @@ public class HesapController(UserManager<Kullanici> userManager, SignInManager<K
         return RedirectToAction("Index", "Home");
     }
 
+    [HttpGet]
+    public IActionResult ErisimEngellendi()
+    {
+        return View();
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Cikis()
