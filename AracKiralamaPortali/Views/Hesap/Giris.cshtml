@@ -1,0 +1,51 @@
+@model GirisViewModel
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<div class="row g-0 hesap-panel">
+    <div class="col-lg-5 d-none d-lg-flex hesap-gorsel">
+        <div>
+            <div class="ust-baslik mb-3">Hesabınız</div>
+            <p class="hesap-gorsel-baslik mb-0">Rezervasyonlarınız tek bir yerde.</p>
+        </div>
+    </div>
+    <div class="col-12 col-lg-7 hesap-form">
+        <h1 class="hesap-baslik">Giriş Yap</h1>
+        <p class="hesap-aciklama">E-posta adresiniz ve şifrenizle hesabınıza girin.</p>
+
+        <form asp-action="Giris" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            <div asp-validation-summary="ModelOnly" class="hesap-hata" role="alert"></div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="username" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Sifre" class="form-label"></label>
+                <div class="input-group">
+                    <input asp-for="Sifre" class="form-control" autocomplete="current-password" />
+                    <button type="button" class="btn btn-outline-secondary sifre-goster" aria-label="Şifreyi göster" aria-pressed="false">
+                        <i class="bi bi-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Sifre" class="text-danger small"></span>
+            </div>
+
+            <div class="form-check mb-4">
+                <input asp-for="BeniHatirla" class="form-check-input" />
+                <label asp-for="BeniHatirla" class="form-check-label"></label>
+            </div>
+
+            <button type="submit" class="btn btn-vurgu w-100">Giriş Yap</button>
+        </form>
+
+        <p class="hesap-alt">Hesabınız yok mu? <a asp-action="Kayit">Kayıt olun</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

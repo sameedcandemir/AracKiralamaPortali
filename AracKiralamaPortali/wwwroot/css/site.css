@@ -332,3 +332,130 @@ html {
 .footer-alt {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* İşlem sonucu mesajı */
+.site-mesaj {
+  background-color: var(--ak-koyu);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+.site-kullanici {
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* Kayıt ve giriş sayfaları: solda fotoğraf, sağda form */
+.hesap-panel {
+  border: 1px solid #e4e4e7;
+  margin: 1rem 0;
+}
+
+.hesap-gorsel {
+  align-items: flex-end;
+  padding: 2.5rem;
+  color: #fff;
+  background-color: var(--ak-siyah);
+  background-image:
+    linear-gradient(0deg, rgba(11, 11, 12, 0.95) 15%, rgba(11, 11, 12, 0.25) 70%),
+    url("/img/hero-arac.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hesap-gorsel-baslik {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hesap-form {
+  padding: 2rem 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .hesap-form {
+    padding: 3rem;
+  }
+}
+
+.hesap-baslik {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.hesap-aciklama {
+  color: #5c5c66;
+  margin-bottom: 2rem;
+}
+
+.hesap-form .form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.hesap-form .form-control {
+  border-radius: 0;
+  min-height: 44px;
+  border-color: #a1a1aa;
+}
+
+.hesap-form .form-control:focus,
+.hesap-form .form-check-input:focus {
+  border-color: var(--ak-siyah);
+  box-shadow: 0 0 0 1px var(--ak-siyah);
+}
+
+.hesap-form .form-check-input {
+  border-color: #71717a;
+  border-radius: 0;
+}
+
+.hesap-form .form-check-input:checked {
+  background-color: var(--ak-siyah);
+  border-color: var(--ak-siyah);
+}
+
+.hesap-form .sifre-goster {
+  padding: 0 0.9rem;
+  border-color: #a1a1aa;
+}
+
+.hesap-form .input-validation-error {
+  border-color: #b02a37;
+}
+
+.hesap-hata {
+  background-color: #fbeaec;
+  border-left: 3px solid #b02a37;
+  color: #842029;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hesap-hata ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.hesap-hata.validation-summary-valid {
+  display: none;
+}
+
+.hesap-alt {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  color: #5c5c66;
+}
+
+.hesap-alt a {
+  color: var(--ak-siyah);
+  font-weight: 600;
+}
