@@ -291,6 +291,22 @@ namespace AracKiralamaPortali.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a1f4c2d0-5b7e-4c11-9d3a-0e6f1b2c3d41",
+                            ConcurrencyStamp = "b2e5d3c1-6c8f-4d22-8e4b-1f7a2c3d4e52",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "c3a6e4d2-7d9a-4e33-9f5c-2a8b3d4e5f63",
+                            ConcurrencyStamp = "d4b7f5e3-8eab-4f44-a06d-3b9c4e5f6a74",
+                            Name = "Musteri",
+                            NormalizedName = "MUSTERI"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
