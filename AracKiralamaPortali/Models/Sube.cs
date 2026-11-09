@@ -26,4 +26,6 @@ public class Sube
     [StringLength(20, ErrorMessage = "Telefon en fazla 20 karakter olabilir.")]
     [Display(Name = "Telefon")]
     public string Telefon { get; set; } = "";
+
+    public List<Arac> Araclar { get; set; } = new();
 }
