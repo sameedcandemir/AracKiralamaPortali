@@ -71,4 +71,6 @@ public class Arac
     public Sube? Sube { get; set; }
 
     public List<Rezervasyon> Rezervasyonlar { get; set; } = new();
+
+    public List<BakimKaydi> BakimKayitlari { get; set; } = new();
 }
