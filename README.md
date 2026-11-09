@@ -74,13 +74,31 @@ dotnet ef database update
 
 Bu komut migration'ları uygulayarak `AracKiralamaDb` veritabanını ve tabloları oluşturur.
 
-### 5. Uygulamayı çalıştırın
+### 5. Başlangıç admin hesabını tanımlayın
+
+Admin bilgileri de depoya girmez, user-secrets ile verilir. Uygulama açılırken bu e-postayla bir kullanıcı yoksa `Admin` rolüyle oluşturur.
+
+```powershell
+dotnet user-secrets set "BaslangicAdmin:Email" "ADMIN_EPOSTANIZ"
+dotnet user-secrets set "BaslangicAdmin:Sifre" "ADMIN_SIFRENIZ"
+```
+
+Şifre en az 6 karakter olmalı; büyük harf, küçük harf, rakam ve özel karakter içermelidir.
+
+### 6. Uygulamayı çalıştırın
 
 ```powershell
 dotnet run
 ```
 
 Terminalde yazan adresi (ör. `https://localhost:7xxx`) tarayıcıda açın.
+
+## Roller
+
+| Rol | Nasıl alınır | Yetki |
+|---|---|---|
+| `Musteri` | Kayıt formuyla otomatik | Müşteri sayfaları |
+| `Admin` | Yalnızca başlangıç admin hesabı | Yönetim paneli (`/Yonetim`) |
 
 ## Ekip çalışma düzeni
 
