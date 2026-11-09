@@ -48,7 +48,15 @@ git clone https://github.com/sameedcandemir/AracKiralamaPortali.git
 cd AracKiralamaPortali/AracKiralamaPortali
 ```
 
-### 2. Veritabanı bağlantı dizesini ekleyin
+### 2. Paketleri yükleyin
+
+```powershell
+dotnet restore
+```
+
+Bu adım atlanırsa sonraki `dotnet ef` komutu `project.assets.json` bulunamadı hatası verir.
+
+### 3. Veritabanı bağlantı dizesini ekleyin
 
 Şifre içerdiği için bağlantı dizesi `appsettings.json` dosyasında **tutulmaz**. Bunun yerine .NET'in user-secrets özelliği kullanılır; değer bilgisayarınızdaki kullanıcı klasöründe saklanır ve depoya girmez.
 
@@ -58,7 +66,7 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Host=localhost;Po
 
 `SIFRENIZ` yerine PostgreSQL kurulumunda belirlediğiniz şifreyi yazın.
 
-### 3. Veritabanını oluşturun
+### 4. Veritabanını oluşturun
 
 ```powershell
 dotnet ef database update
@@ -66,7 +74,7 @@ dotnet ef database update
 
 Bu komut migration'ları uygulayarak `AracKiralamaDb` veritabanını ve tabloları oluşturur.
 
-### 4. Uygulamayı çalıştırın
+### 5. Uygulamayı çalıştırın
 
 ```powershell
 dotnet run
