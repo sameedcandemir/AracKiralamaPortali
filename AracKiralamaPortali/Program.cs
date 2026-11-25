@@ -34,10 +34,13 @@ await AdminOlusturucu.OlusturAsync(app.Services);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Home/Hata");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+// 404 gibi durumlarda tarayıcının boş hata ekranı yerine kendi sayfamızı göster.
+app.UseStatusCodePagesWithReExecute("/Home/Durum/{0}");
 
 app.UseHttpsRedirection();
 app.UseRouting();

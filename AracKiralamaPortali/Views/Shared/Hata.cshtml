@@ -1,0 +1,16 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Hata";
+}
+
+<section class="bolum durum-sayfa">
+    <div class="durum-kod" aria-hidden="true">500</div>
+    <h1 class="bolum-baslik mb-3">Beklenmeyen bir hata oluştu.</h1>
+    <p class="text-secondary mb-4">Lütfen biraz sonra tekrar deneyin. Sorun devam ederse bize hata numarasıyla bildirin.</p>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-vurgu">Ana Sayfaya Dön</a>
+
+    @if (Model?.ShowRequestId == true)
+    {
+        <p class="small text-secondary mt-4 mb-0">Hata numarası: <code>@Model.RequestId</code></p>
+    }
+</section>

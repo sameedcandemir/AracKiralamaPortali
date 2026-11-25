@@ -11,14 +11,22 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Gizlilik()
     {
         return View();
     }
 
+    // Beklenmeyen bir hata olduğunda (500) buraya yönlendirilir.
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult Hata()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    // 404 gibi durum kodlarında gösterilir; kod adresten gelir (/Home/Durum/404).
+    public IActionResult Durum(int id)
+    {
+        ViewData["Kod"] = id;
+        return View();
     }
 }

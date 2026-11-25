@@ -1,0 +1,16 @@
+@{
+    var kod = (int)(ViewData["Kod"] ?? 0);
+    var bulunamadi = kod == 404;
+    ViewData["Title"] = bulunamadi ? "Sayfa Bulunamadı" : "İstek İşlenemedi";
+}
+
+<section class="bolum durum-sayfa">
+    <div class="durum-kod" aria-hidden="true">@kod</div>
+    <h1 class="bolum-baslik mb-3">@(bulunamadi ? "Aradığınız sayfa bulunamadı." : "İsteğiniz işlenemedi.")</h1>
+    <p class="text-secondary mb-4">
+        @(bulunamadi
+            ? "Adres yanlış yazılmış ya da sayfa kaldırılmış olabilir."
+            : "Lütfen sayfayı yenileyip tekrar deneyin.")
+    </p>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-vurgu">Ana Sayfaya Dön</a>
+</section>
